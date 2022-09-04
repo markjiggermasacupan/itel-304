@@ -17,10 +17,10 @@ def main():
             if not (a or b or c < 0):
                 raise ValueError()
                 assert a or b or c > 0
-            # Triangle Perimeter Computation:
+            # Triangle Perimeter computation:
             p = (a + b + c)
 
-            # Semi-perimeter computation:
+            # Triangle Semi-perimeter computation:
             smp = (a + b + c / 2)
 
             # calculating the area:
