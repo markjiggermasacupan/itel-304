@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 from datetime import datetime
 
@@ -7,16 +7,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    html><body>
+    name = request.args['name']
+    return """
+    <html><body>
       <h1>Hello, {0}!</h1>
           Time is {1}.
       </body></html>
-      """.format(
-          name, str(datetime.now()))
-          
+      """.format(datetime.now())
+
+
 # Launch the Flask dev server
 app.run(host="localhost", debug=True)
-
-
-if __name__ == '__main__':
-    app.run()
