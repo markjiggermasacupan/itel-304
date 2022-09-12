@@ -1,4 +1,4 @@
-set FLASK_APP=UserInteraface.py\
+set FLASK_APP=UserInterface.py\
 $env:FLASK_APP = "UserInterface.py"\
 flask run\
 
