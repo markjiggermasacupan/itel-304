@@ -4,7 +4,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def hello():
     name = request.args['name']
