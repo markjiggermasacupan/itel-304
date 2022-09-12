@@ -5,8 +5,6 @@ from datetime import datetime
 app = Flask(__name__)
 
 
-app.run('/')
-
 @app.route('/')
 
 def hello():
