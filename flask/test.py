@@ -1,3 +1,5 @@
+#format() method
+
 #named indexes
 txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age =36)
 #named indexes
