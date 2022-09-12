@@ -1,11 +1,8 @@
-from flask import Flask, request, WSGIServer
+from flask import Flask, request
 
 from datetime import datetime
 
 app = Flask(__name__)
-
-http_server = WSGIServer(('', 5000), app)
-http_server.serve_forever()
 
 
 @app.route('/home')
@@ -42,7 +39,3 @@ def greet():
 
 # Launch the FlaskPy dev server
 app.run(host="localhost", debug=True)
-
-
-# if __name__ == '__main__':
-#    app.run()
