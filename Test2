@@ -27,7 +27,7 @@ def greet():
     fname = request.args.get('fname')
     char = request.args.get['char']
     if char == '':
-        msg = How can I know you, if you do not tell your name?
+        msg = 'How can I know you, if you do not tell your name?'
     else:
         msg = 'Your name' + {0} + fname + \
             'and your characteristic' + {0} + char
