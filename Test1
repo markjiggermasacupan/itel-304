@@ -25,7 +25,7 @@ def home():
 @app.route("/greet")
 def greet():
     fname = request.args.get('fname')
-    char = request.args.get['char']
+    char = request.args['char']
     if char == '':
         msg = """
         <html><body>
