@@ -1,0 +1,116 @@
+@import url("./custom.css");
+
+$success: #3eb952;
+body,
+html {
+  overflow-x: hidden;
+}
+
+body * {
+  font-family: "Kanit", sans-serif !important;
+}
+section.hero-main {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  .bg-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    background: url("./images/bg.jpg");
+    background-size: cover;
+    background-blend-mode: lighten;
+    z-index: -1;
+  }
+  .hero-text {
+    background: rgba(255, 255, 255, 0.6);
+    width: max-content;
+    font-weight: 200;
+    padding: 10px 17px;
+  }
+}
+
+.shipping-card {
+  width: 300px;
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: -10vh;
+}
+
+.card-text-quotation {
+  position: absolute;
+  color: $success;
+  font-weight: bolder !important;
+  font-size: 3rem;
+  line-height: 0;
+  left: 20px;
+  top: 5px;
+}
+.hero-top-img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.hero-main-text {
+  font-size: 3em;
+}
+
+.product-card{
+  border-radius: 0;
+  border-bottom: 5px solid $success;
+}
+
+#menu-btn{
+  outline: none !important;
+  border: none !important;
+}
+
+@media screen and (max-width: 400px) {
+  .hero-main-text {
+    font-size: 2.8em;
+  }
+  .hero-top-img {
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+  }
+
+  .card-text-quotation {
+    left: -3px!important;
+  }
+
+  .img-logo{
+    width: 50px;
+  }
+  .navbar{
+    .end-menu{
+      width: 100%!important;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero-main-text {
+    font-size: 2.5em !important;
+  }
+  .hero-top-img {
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .navbar{
+    .end-menu{
+      width: 100%!important;
+      justify-content: center;
+    }
+  }
+
+}
