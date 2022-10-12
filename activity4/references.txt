@@ -1,0 +1,4 @@
+https://www.stackovercloud.com/2020/04/17/how-to-make-a-web-application-using-flask-in-python-3/
+https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/
+https://blog.finxter.com/how-to-install-pymysql-in-python/
+https://www.folkstalk.com/2022/10/requirements-txt-flask-with-code-examples-2.html
