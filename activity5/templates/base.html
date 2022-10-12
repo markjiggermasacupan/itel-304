@@ -10,8 +10,8 @@
 
     <title>{% block title %} {% endblock %}</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <body  class="bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ url_for('index')}}">FlaskBlog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,9 +24,25 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="container text-white">
         {% block content %} {% endblock %}
     </div>
+
+
+
+    <footer class="py-3 bg-dark text-white" id="footer">
+      <div class="container" data-aos="zoom-in">
+        <hr />
+        <h3>Masacupan, Mark Jigger V.</h3>
+        <p class="mb-4">BSIT 3A (WMAD)</p>
+        <p class="">Have a Great Day!</p>
+
+        <p class="mt-3 text-white-50">
+          <i class="bx bx-copyright me-3"></i
+          ><span id="copy-right-date">2022-2023</span>
+        </p>
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
