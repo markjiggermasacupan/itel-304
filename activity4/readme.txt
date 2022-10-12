@@ -1,5 +1,5 @@
 MY REPOSITORY:
-https://github.com/markjiggermasacupan/flaskdemo
+https://github.com/markjiggermasacupan/itel-304
 
 -- SETUP FLASK APPLICATION via Desktop:
 pip install virtualenv
