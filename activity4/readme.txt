@@ -8,7 +8,9 @@ env\scripts\activate.bat
 pip install flask
 python.exe -m pip install --upgrade pip
 pip3 install pymysql
+cd activity5
 py init_db.py
+flask run
 
 -- HOW TO RUN? / MODULE FLASK NOT FOUND?
 VIEW > Command Palette > Python Interpreter >  Python 3.10.5 .env/env
