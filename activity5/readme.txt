@@ -2,8 +2,8 @@ MY REPOSITORY:
 https://github.com/markjiggermasacupan/itel-304
 
 -- SETUP FLASK APPLICATION via Desktop:
-pip install virtualenv
 virtualenv env
+pip install virtualenv
 env\scripts\activate.bat
 pip install flask
 python.exe -m pip install --upgrade pip
