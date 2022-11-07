@@ -1,7 +1,7 @@
 # Installing Kivy on Windows:
 
 1.) Ensure you have the latest pip and wheel:
-* python -n -pip install --upgrade pip wheel setuptools
+* python -m pip install --upgrade pip wheel setuptools
 
 2.) Install the dependencies:
 * python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
