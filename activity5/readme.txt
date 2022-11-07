@@ -9,9 +9,6 @@ env\scripts\activate.bat
 pip install flask
 pip install -U Flask
 pip3 install pymysql
-cd activity5
-py init_db.py
-flask run
 
 -- HOW TO RUN? / MODULE FLASK NOT FOUND?
 VIEW > Command Palette > Python Interpreter >  Python 3.10.5 .env/env
@@ -42,7 +39,10 @@ git pull origin
 * Open via VS Code
 
 !! ACTIVITY 5: Web App Flask Database
-F5
+cd activity5
+py init_db.py
+flask run
+F5 Debug via Flask
 
 !!ACTIVITY 4 Render Template:
 set FLASK_APP=hello.py
