@@ -2,11 +2,12 @@ MY REPOSITORY:
 https://github.com/markjiggermasacupan/itel-304
 
 -- SETUP FLASK APPLICATION via Desktop:
+python.exe -m pip install --upgrade pip
 virtualenv env
 pip install virtualenv
 env\scripts\activate.bat
 pip install flask
-python.exe -m pip install --upgrade pip
+pip install -U Flask
 pip3 install pymysql
 cd activity5
 py init_db.py
