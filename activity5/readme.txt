@@ -3,12 +3,14 @@ https://github.com/markjiggermasacupan/itel-304
 
 -- SETUP FLASK APPLICATION via Desktop:
 python.exe -m pip install --upgrade pip
-virtualenv env
 pip install virtualenv
+virtualenv env
 env\scripts\activate.bat
 pip install flask
 pip install -U Flask
 pip3 install pymysql
+https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+https://flask.palletsprojects.com/en/2.2.x/installation/
 
 -- HOW TO RUN? / MODULE FLASK NOT FOUND?
 VIEW > Command Palette > Python Interpreter >  Python 3.10.5 .env/env
