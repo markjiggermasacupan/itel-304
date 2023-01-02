@@ -1,0 +1,116 @@
+# including CityView Screen :
+#: include Lib\site_packages\City\Inherit_Screen\CityView.kv
+#: include Lib\site_packages\City\Inherit_Screen\bar_view.kv
+
+
+<CityScreen>:
+
+	
+
+	MDBoxLayout:
+		orientation: 'vertical'
+		
+
+		
+		MDToolbar:
+			id: go_back_tool_bar
+			title: 'Your Cities'
+			elevation: 10
+			pos_hint: {"top":1}
+			left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+			right_action_items: [["refresh", lambda x: root.refresh()]]
+
+		MDLabel:
+			text: ''
+
+		
+
+	
+	MDBoxLayout:
+		orientation: 'vertical'
+		pos_hint: {'top':0.88, 'left':1}
+		
+
+		ScreenManager:
+			id: screen_manager_city
+			Screen:
+				id: city_list
+				
+				NoteListItem:
+					id: note_list_item_id
+
+				
+
+<Cities>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		md_bg_color: 255/255, 255/255, 255/255, 1
+		
+		pos_hint: {'top':1, 'left':1}
+		
+		RecycleView:
+            data: root.data_for_widgets
+            viewclass: 'NoteListItem'
+
+            RecycleBoxLayout:
+                default_size: None, dp(70)
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: 'vertical'
+                spacing: dp(2)
+        MDLabel:
+        	text: ''
+        	size_hint_y: None
+        	height: 65
+
+
+
+<NoteListItem>:
+	MDList:
+		TwoLineIconListItem:
+			id : citytitle
+	        text: root.city_title
+	        secondary_text: 'Country: NaN , Code: 404'
+	        on_release :
+	        	value = root.city_title
+	        	root.open_city(value)
+
+	        IconLeftWidget:
+	        	icon: 'weather-cloudy'
+
+	        
+            MDBoxLayout:
+            	orientation:'horizontal'
+            	
+
+            	size_hint_x: None
+            	width: 25
+            	pos_hint: { 'center_x': 0.9, 'center_y': 0.5}
+            	
+            	MDIconButton:
+            		pos_hint: { 'center_x': 0.5, 'center_y': 0.45}
+            		icon: "delete"
+            		theme_text_color: "Custom"
+    				text_color: app.theme_cls.primary_color
+
+
+
+            		on_release:
+            			delete_this = root.city_title
+            			root.delete(delete_this)
+	      
+
+	        
+
+
+
+	        
+	        
+
+
+	        
+
+
+
+

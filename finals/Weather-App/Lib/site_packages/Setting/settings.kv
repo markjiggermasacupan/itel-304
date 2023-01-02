@@ -1,0 +1,395 @@
+#: import random random
+
+
+<SettingScreen>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		
+
+		MDToolbar:
+			id: tool_bar
+			title: 'Settings'
+			elevation: 10
+			pos_hint: {"top":1}
+			left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+
+		ScrollView:
+			MDFloatLayout:
+				orientation: 'vertical'
+				#cols: 2
+				spacing: 18, 18
+				padding: 15, 18
+				size_hint_y : None
+				height: 1000
+				#md_bg_color: 1,1,0,0.4
+
+				# ------------------ General ------------------------
+				MDLabel:
+					text: 'General Settings'
+					font_style: "Body1"
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.97}
+					halign: 'center'
+
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.955}
+
+				# ------ Profile ------------
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.92}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Sync Data:'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: sync_switch
+        				active : True
+        				on_active: root.sync_callback(self, self.active)
+
+
+        		
+
+        		# ----------- Client ID --------------
+        		MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.88}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Client ID (Raw) :'
+						padding: 10,15
+						font_style: 'Button'
+
+					TextInput:
+						text: '{0}'.format(random.randint(100000,900000))
+						size_hint_x: None
+						width: 100
+						size_hint_y: None
+						height: 30
+						pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+						disabled : True
+
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.115, 1)
+
+
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.84}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'APP Version :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDLabel:
+						text: ''
+						size_hint_x: None
+						width: 60
+
+					MDLabel:
+						text: '         1.1.2 V'
+						font_style: 'Caption'
+
+				# ------------------ Premissions ------------------------
+				MDLabel:
+					text: 'Permissions'
+					font_style: "Body1"
+					pos_hint : {'center_x': 0.5, 'center_y': 0.799}
+					halign: 'center'
+					
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.783}
+
+				# -------------------- Internet ----------------------
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.76}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Internet :'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: internet_switch
+        				active : True
+        				on_active: root.internet_callback(self, self.active)
+        				
+        				
+        		# -------------------- GPS ----------------------
+        		MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.72}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'GPS :'
+						padding: 10,15
+						font_style: 'Button'
+						
+
+					Switch:
+        				id: gps_switch
+        				active : True
+        				on_active: root.gps_callback(self, self.active)
+        				
+
+        		# -------------------- Storage ----------------------
+        		MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.68}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Storage :'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: storage_switch
+        				active : False
+        				on_active: root.storage_callback(self, self.active)
+        		
+			
+				# ------------------ Theme ------------------------
+				MDLabel:
+					text: 'Theme / Text'
+					font_style: "Body1"
+					pos_hint : {'center_x': 0.5, 'center_y': 0.63}
+					halign: 'center'
+					
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.62}
+
+				# -------------------- <Night Mode> ----------------------
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.6}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Night Mode :'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: switch
+        				active : False
+        				on_active: root.callback(self, self.active)
+        				disabled: True
+        		
+        		# -------------------- <Font Style> ----------------------
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.56}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Font Style :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDLabel:
+						text: ''
+						size_hint_x: None
+						width: 60
+
+					MDLabel:
+						text: '         Body1'
+						font_style: 'Caption'
+						theme_text_color: 'Secondary'
+
+				# -------------------- <Font Size> ----------------------
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.52}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Font Size :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDLabel:
+						text: ''
+						size_hint_x: None
+						width: 60
+
+					MDLabel:
+						text: '         Medium'
+						font_style: 'Caption'
+						theme_text_color: 'Secondary'
+
+				MDLabel: 
+					text: '*This Feature\'s are DISABLED currently !'
+					padding: 10, 15
+					font_style : 'Subtitle2'
+					theme_text_color: 'Hint'
+					size_hint_y: None
+					height: 20
+					pos_hint : {'center_x': 0.5, 'center_y': 0.5}
+
+
+				# ------------------ Security ------------------------
+				MDLabel:
+					text: 'Theme / Text'
+					font_style: "Body1"
+					pos_hint : {'center_x': 0.5, 'center_y': 0.47}
+					halign: 'center'
+					
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.46}
+
+				# -------------------- <Privacy> ----------------------
+				MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.42}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'GPS Safe Mode :'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: gps_safe_switch
+        				active : True
+        				on_active: root.gps_safe_mode_callback(self, self.active)
+
+        		# -------------------- <Security> ----------------------
+        		MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.38}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Security Mode:'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: security_switch
+        				active : True
+        				on_active: root.security_callback(self, self.active)
+
+        		# -------------------- <Data Usage> ----------------------
+        		MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.34}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Data Usage: \n(Data Limit)'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: data_switch
+        				active : False
+        				on_active: root.data_callback(self, self.active)
+
+        		
+
+        		# -------------------- <Notifications> ----------------------
+        		MDBoxLayout:
+					#md_bg_color:  1,0,1,0.5
+					pos_hint : {'center_x': 0.5, 'center_y': 0.30}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Notifications :'
+						padding: 10,15
+						font_style: 'Button'
+
+					Switch:
+        				id: notification_switch
+        				active : False
+        				on_active: root.notification_callback(self, self.active)
+
+        		MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.25}
+
+				# -------------< Feedback >----------------------
+				MDBoxLayout:
+					md_bg_color:  200/255,200/255,200/255,1
+					pos_hint : {'center_x': 0.5, 'center_y': 0.20}
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 40
+
+					MDLabel:
+						text: 'Please, Give Feedback and \n thank you for Support'
+						halign: 'center'
+
+
+
+
+
+        				
+
+
+					
+			
+
+
+						
+						
+
+					
+
+				

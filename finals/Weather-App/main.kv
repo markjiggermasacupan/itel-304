@@ -1,0 +1,127 @@
+
+#: include Imports\Packages.kv
+
+
+
+Screen:
+	
+	
+	MDToolbar:
+		id: tool_bar
+		title: 'WeatherAPI'
+		elevation: 10
+		pos_hint: {"top":1}
+		left_action_items: [['menu', lambda x: navigation_drawer.set_state("open")]]
+
+	MDBoxLayout:
+		orientation: 'vertical'
+		#md_bg_color: 1,0,1,1
+		pos_hint: {'top':0.89}
+
+		NavigationLayout:
+			x: tool_bar.height
+
+			ScreenManager:
+				id : screen_manager
+				
+
+				Screen:
+					name: 'load_screen'
+					
+					LoadScreen:
+
+					
+				
+				Screen:
+					name: 'main_screen'
+
+					MainScreen:
+						id : home_screen
+					
+				Screen:
+					name: 'profile_screen'
+					
+					ProfileScreen:
+						id: profile_screen
+
+				Screen:
+					name: 'setting_screen'
+
+					SettingScreen:
+						id: setting_screen
+
+
+				Screen: 
+					name : 'city_screen'
+					
+					CityScreen:
+						id: city_screen
+
+				Screen:
+					name : 'content'
+					
+					Content:
+						id : Content_dialog
+
+				Screen : 
+					name: 'City_View'
+
+					CityView:
+						id : City_View
+
+				Screen:
+					name : 'bar_view'
+
+					BarView:
+						id: bar_view
+
+				Screen:
+					name : 'map_screen'
+
+					MapDisplay:
+						id: map_view
+
+				Screen:
+					name: 'bar_load_screen'
+
+					BarLoad:
+						id: bar_load_view
+
+				Screen:
+					name: 'about_screen'
+
+					AboutScreen:
+						id: about_screen
+
+				Screen:
+					name: 'feedback_screen'
+
+					
+
+				Screen:
+					name: 'policy_screen'
+
+					PolicyScreen:
+						id: policy_screen
+
+
+			MDNavigationDrawer:
+				id: navigation_drawer
+
+				ContentNavDrawer:
+					id: content_navdrawer
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+				

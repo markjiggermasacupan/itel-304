@@ -1,0 +1,59 @@
+<PolicyScreen>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		
+
+		MDToolbar:
+			id: tool_bar
+			title: 'Developer'
+			elevation: 10
+			pos_hint: {"top":1}
+			left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+
+		ScrollView:
+			MDFloatLayout:
+				orientation: 'vertical'
+				spacing: 18, 18
+				padding: 15, 18
+				size_hint_y : None
+				height: 700
+				#md_bg_color: 1,1,0,1
+
+				# ------------ Weat ------
+				MDLabel:
+					text: 'WeatherAPI Developer'
+					halign: 'center'
+					size_hint_y: None
+					height: 50
+					font_style: "Body1"
+					pos_hint: {'center_x': 0.5, 'center_y': 0.96}
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint: {'center_x': 0.5, 'center_y': 0.945}
+
+				MDLabel:
+					text: 'Name : Swaroop Khot\nContact: Weatherapi.contact.0102@gmail.com'
+					padding: 10,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.87}
+
+				MDLabel:
+					text: 'App Usage: \n1. WeatherApi used : OpenWeatherAPI.com \n2. Map Used : OpenWeatherMap.com'
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+
+				MDLabel:
+					text: 'How Do this Work: \nYou could enter the Desired city in two ways : \na. Manually Typing in Add City section \nb. Searching on Map and clicking on Markers\n\n The city which you enter is kept added onto the list. You could delete the list accordingly. \n\nCondition of adding city: \nThe city which you enter must be known to our API provider.It must not be a town. In such case, city would not be added to the list and also you will be notify about it. \nWhen you click on desired city the weatherapi will trigger the click and will gather information of current weather complications. \nYou would rather see the Graphs and Real time projections of two days weather respectively.'
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.42}
+
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint: {'center_x': 0.5, 'center_y': 0.15}

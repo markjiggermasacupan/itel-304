@@ -1,0 +1,249 @@
+<ProfileScreen>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		
+
+		MDToolbar:
+			id: toolbar_id
+			title: 'Profile'
+			elevation: 10
+			pos_hint: {'top':1}
+			left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+
+		ScrollView:
+			MDFloatLayout:
+				orientation: 'vertical'
+				spacing: 18, 18
+				padding: 15, 18
+				size_hint_y : None
+				height: 600
+				#md_bg_color: 1,1,0,0.2
+
+				MDLabel:
+					text: 'Profile'
+					size_hint_y: None
+					height: 50
+					font_style: "Body1"
+					pos_hint: {'center_x': 0.5, 'center_y': 0.967}
+					halign: 'center'
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.95}
+
+				# ------------------<Name>----------------
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.89}
+					#md_bg_color: 1,0,1,0.5
+
+					MDLabel:
+						text: 'Name :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDTextField:
+						hint_text: 'eg. John Walt'
+						id: name
+						size_hint_x: None
+						width: 100
+						size_hint_y: None
+						height: 30
+						pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+					
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+
+				# --------------------- <E mail >_----------------
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.80}
+					#md_bg_color: 1,0,1,0.5
+
+					MDLabel:
+						text: 'Email :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDTextField:
+						hint_text: 'Gmail'
+						id: email
+						size_hint_x: None
+						width: 100
+						size_hint_y: None
+						height: 30
+						pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+					
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+
+				# --------------------- <App Password>_----------------
+				MDLabel: 
+					text: 'Set App Password'
+					pos_hint: {'center_x': 0.5, 'center_y': 0.71}
+					padding: 10,15
+					text_hint_color: 'Primary'
+					font_style: 'Caption'
+
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+					#md_bg_color: 1,0,1,0.5
+
+					MDLabel:
+						text: 'Password :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDTextField:
+						hint_text: 'Password'
+						id: password
+						size_hint_x: None
+						width: 100
+						size_hint_y: None
+						height: 30
+						password: True
+						pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+					
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+
+				# ---------< Re-enter>----------------
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.56}
+					#md_bg_color: 1,0,1,0.5
+
+					MDLabel:
+						text: 'Re-Enter \nPassword :'
+						padding: 10,15
+						font_style: 'Button'
+
+					MDTextField:
+						hint_text: 'Password'
+						id: re_password
+						size_hint_x: None
+						width: 100
+						size_hint_y: None
+						height: 30
+						password: True
+						pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+					
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+				# -------------< Confirm-Password> -----------------
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.47}
+					#md_bg_color: 1,0,1,0.5
+
+					MDRaisedButton:
+						text: "Confirm"
+						padding: 10,15
+						on_release:
+							root.save_password()
+					
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+
+				# -------------< Save Profile> -----------------
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.34}
+					#md_bg_color: 1,0,1,0.5
+
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.05, 1)
+
+					MDRaisedButton:
+						text: "Save Profile"
+						padding: 10,15
+						on_release:
+							root.save_profile()
+
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.01, 1)
+
+					MDRaisedButton:
+						text: "Edit Profile"
+						padding: 10,15
+						on_release:
+							root.edit_profile()
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint : {'center_x': 0.5, 'center_y': 0.2}
+
+				# ----------------------< Follow us >-----------------------
+				MDBoxLayout:
+					orientation: 'horizontal'
+					size_hint_y: None
+					height: 50
+					pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+					#md_bg_color: 1,0,1,0.5
+
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+
+					MDIconButton:
+					    icon: "facebook-box"
+					    theme_text_color: "Custom"
+					    
+
+					MDIconButton:
+					    icon: "instagram"
+					    theme_text_color: "Custom"
+					    
+
+					MDIconButton:
+					    icon: "telegram"
+					    theme_text_color: "Custom"
+					    
+
+					MDIconButton:
+					    icon: "twitter"
+					    theme_text_color: "Custom"
+					    
+
+					MDLabel:
+						text: ''
+						padding: 10,15
+						size_hint: (0.2, 1)
+
+
+					
+					
+					
+

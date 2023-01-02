@@ -1,0 +1,242 @@
+
+<MainScreen>:
+	id: mainscreenid
+	
+	MDBoxLayout:
+		orientation: 'vertical'
+		pos_hint: {'top':0.878}
+		md_bg_color: 242/255,242/255,242/255,1
+		
+
+		ScrollView:
+			MDGridLayout:
+				cols: 1
+				spacing: 18, 18
+				padding: 28, 18
+				size_hint_y : None
+				height: self.minimum_height
+				md_bg_color: 242/255,242/255,242/255,1
+				
+				MDCard: 
+					orientation: "vertical"
+		            padding: "8dp"
+		            size_hint: None, None
+		            size: "280dp", "220dp"
+		            pos_hint: {"center_x": .5, "center_y": .5}
+		            #md_bg_color : 185/255, 1, 1, 1
+		            elevation: 7
+
+
+		            canvas:
+
+				        Rectangle:
+				            pos: self.pos
+				            size: self.size
+				            source: 'Resorces\\city_weather1.jpg'
+
+
+		            MDLabel:
+		                text: "City WeatherAPI"
+		                theme_text_color: "Primary"
+		                font_style: 'H6'
+		                halign: 'center'
+		                size_hint_y: None
+		                height: self.texture_size[1]
+
+
+		            MDSeparator:
+		                height: "1dp"
+					
+					
+					MDLabel:
+		                text: "Hint: Add New Cities from below"
+		                theme_text_color: "Hint"
+		                font_style: "Caption"
+		                halign: 'center'
+		                size_hint_y: None
+		                height: self.texture_size[1]
+
+		            MDLabel:
+						text: ''
+					
+		            MDSeparator:
+		                height: "1dp"
+
+		            MDBoxLayout:
+		            	orientation: 'vertical'
+		            	
+		            	size_hint_y: None
+		            	height: 40
+		            	
+			            MDFillRoundFlatButton :
+			            	padding: 2,2
+			            	text: 'View Your Cities'
+			            	pos_hint: {"center_x": .5}
+			            	size_hint_y: None
+			                height: 35
+			            	on_release:
+			            		root.city_screen()
+		        
+
+		        MDCard: 
+					orientation: "vertical"
+		            padding: "8dp"
+		            size_hint: None, None
+		            size: "280dp", "220dp"
+		            pos_hint: {"center_x": .5, "center_y": .5}
+		            #md_bg_color : 160/255, 1, 1, 1
+
+		            canvas:
+		            	Rectangle: 
+		            		source: 'Resorces\\gps_icon.jpg'
+		            		size: self.size
+		            		pos: self.pos
+
+		            MDLabel:
+		                text: "GPS Mode"
+		                theme_text_color: "Primary"
+		                font_style: 'H6'
+		                halign: 'center'
+		                size_hint_y: None
+		                height: self.texture_size[1]
+
+
+		            MDSeparator:
+		                height: "3dp"
+
+		            MDLabel:
+						text: ''
+
+					
+
+		            MDFillRoundFlatButton :
+			            padding: 2,2
+			            text: 'View Your Cities'
+			            pos_hint: {"center_x": .5}
+			            size_hint_y: None
+			            height: 35
+			            on_release:
+			            	root.mapview()
+		        
+
+
+		        MDCard: 
+					orientation: "vertical"
+		            padding: "8dp"
+		            size_hint: None, None
+		            size: "280dp", "220dp"
+		            pos_hint: {"center_x": .5, "center_y": .5}
+		            md_bg_color : 153/255, 221/255, 255/255, 1
+
+		            canvas:
+		            	Rectangle: 
+		            		source: 'Resorces\\setting.jpg'
+		            		size: self.size
+		            		pos: self.pos
+
+		            MDLabel:
+		                text: "Setting"
+		                theme_text_color: "Primary"
+		                font_style: 'H6'
+		                halign: 'center'
+		                size_hint_y: None
+		                height: self.texture_size[1]
+
+
+		            MDSeparator:
+		                height: "1dp"
+
+
+		            MDLabel:
+						text: ''
+
+		            MDFillRoundFlatButton :
+			            padding: 2,2
+			            text: 'Go To Settings'
+			            pos_hint: {"center_x": .5}
+			            size_hint_y: None
+			            height: 35
+			            on_release:
+			            	app.root.ids.screen_manager.current = 'setting_screen'
+			            	
+
+
+
+		        MDCard: 
+					orientation: "vertical"
+		            padding: "8dp"
+		            size_hint: None, None
+		            size: "280dp", "220dp"
+		            pos_hint: {"center_x": .5, "center_y": .5}
+		            md_bg_color : 230/255, 230/255, 230/255, 1
+
+		            canvas:
+		            	Rectangle: 
+		            		source: 'Resorces\\agreement.jpg'
+		            		size: self.size
+		            		pos: self.pos
+
+		            MDLabel:
+		                text: "Agreement"
+		                theme_text_color: "Primary"
+		                font_style: 'H6'
+		                halign: 'center'
+		                size_hint_y: None
+		                height: self.texture_size[1]
+
+
+		            MDSeparator:
+		                height: "1dp"
+
+
+		            MDLabel:
+						text: ''
+
+		            MDFillRoundFlatButton :
+			            padding: 2,2
+			            text: 'Read Agreement'
+			            pos_hint: {"center_x": .5}
+			            size_hint_y: None
+			            height: 35
+			            on_release:
+			            	app.root.ids.screen_manager.current = 'about_screen'
+			            
+			            	 
+
+		        MDLabel:
+		        	text: ''
+		        	size_hint_y: None
+		        	height: 45
+
+
+	    
+	MDFloatingActionButtonSpeedDial:
+		id: floating_button
+	    callback: app.callback
+	    data: app.data
+		icon: 'plus'
+		hint_animation: True
+			
+		elevation: 10
+		md_bg_color: app.theme_cls.primary_color
+		pos_hint : {'right': 0.9, 'top': 0.13}
+
+
+	
+
+		
+		
+<Content>:
+	
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "50dp"
+
+    MDTextField:
+    	id : city_entered
+        hint_text: "City"
+
+
+		
+

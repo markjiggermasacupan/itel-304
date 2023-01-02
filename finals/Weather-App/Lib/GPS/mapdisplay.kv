@@ -1,0 +1,54 @@
+#: import MapView kivy.garden.mapview.MapView
+#: import GpsBlinker Lib.GPS.GpsHelper.GpsBlinker 
+#: include Lib\GPS\GpsHelper\GpsBlinker.kv
+
+
+
+<MapDisplay>:
+	orientation: 'vertical'
+	
+	latitude : 19.07
+	longitude : 72.88
+
+	MDToolbar:
+		id: tool_bar
+		title: 'Map'
+		elevation: 10
+		pos_hint: {"top":1}
+		left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+		right_action_items: [['magnify', lambda x: root.search_city()]]
+
+	MapView:
+		id: map_views_id
+		lat: root.latitude
+		lon: root.longitude
+		zoom: 10
+
+		on_zoom: 
+			self.zoom = 10 if self.zoom < 10 else self.zoom
+
+		on_lat:
+			print('lat', self.lat)
+		on_lon: 
+			print('lon', self.lon)
+
+
+		GpsBlinker:
+			id: gps_blinker
+
+			
+				
+				
+
+
+
+<Content1>:
+	
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "50dp"
+
+    MDTextField:
+    	id : search_city
+        hint_text : 'Search City'

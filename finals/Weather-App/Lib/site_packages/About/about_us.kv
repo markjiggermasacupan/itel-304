@@ -1,0 +1,162 @@
+<AboutScreen>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		
+
+		MDToolbar:
+			id: tool_bar
+			title: 'Settings'
+			elevation: 10
+			pos_hint: {"top":1}
+			left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+
+		ScrollView:
+			MDFloatLayout:
+				orientation: 'vertical'
+				#cols: 2
+				spacing: 18, 18
+				padding: 15, 18
+				size_hint_y : None
+				height: 1100
+				#md_bg_color: 1,1,0,1
+				
+					
+				# ------------------ terms ------------
+				MDLabel:
+					text: 'PRIVACY POLICY'
+					halign: 'center'
+					size_hint_y: None
+					height: 50
+					font_style: "Body1"
+					pos_hint: {'center_x': 0.5, 'center_y': 0.98}
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint: {'center_x': 0.5, 'center_y': 0.965}
+
+				MDLabel:
+					text: 'We Respect for your privacy and we won\'t gonna harm any of your personal data. In our Terms and Policy you\'ll find :'
+					padding: 10,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.93}
+
+				MDLabel:
+					text: 'Information which is easier to understand:'
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.88}
+
+				MDLabel:
+					text: 'Our terms and ploicy are easier to understand and reflect features provided within the app like GPS and Weather Details respectively'
+					pos_hint: {'center_x': 0.5, 'center_y': 0.845}
+					font_style : 'Caption'
+					padding: 18,10
+
+
+				MDLabel:
+					text: 'No Third-party banner or Ads:'
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.81}
+
+				MDLabel:
+					text: 'We don\'t allow third-party banner ads on this platform.'
+					pos_hint: {'center_x': 0.5, 'center_y': 0.792}
+					font_style : 'Caption'
+					padding: 18,10
+
+				MDLabel:
+					text: 'Profile Privacy: '
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.765}
+
+				MDLabel:
+					text: 'The Profile provided in here is only for app purpose and we don\'t provide data to other platforms. The profile security remains within your phone'
+					pos_hint: {'center_x': 0.5, 'center_y': 0.7315}
+					font_style : 'Caption'
+					padding: 18,10
+
+				MDLabel:
+					text: 'GPS Privacy Policy : '
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.69}
+
+				MDLabel:
+					text: 'First of all, the app does\'t share your IP and GPS locations with any other cross-platforms. The GPS provided here is to just get updated with weather conditions with your locality !'
+					pos_hint: {'center_x': 0.5, 'center_y': 0.655}
+					font_style : 'Caption'
+					padding: 18,10
+
+				# ------------ Service we provide -------------
+				MDLabel:
+					text: 'ABOUT OUR SERVICE'
+					halign: 'center'
+					size_hint_y: None
+					height: 50
+					font_style: "Body1"
+					pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint: {'center_x': 0.5, 'center_y': 0.585}
+
+
+				MDLabel:
+					text: 'Age : '
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.564}
+
+				MDLabel:
+					text: 'There is no age limit to use this services. Parents must take care of this if in-case something wents wrong. In such case, we won\'t take any responsibility. When you use this services, you automatically agree with our terms and conditions.'
+					pos_hint: {'center_x': 0.5, 'center_y': 0.52}
+					font_style : 'Caption'
+					padding: 18,10
+
+				MDLabel:
+					text: 'Device and Storage : '
+					font_style : 'Subtitle2'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.47}
+
+				MDLabel:
+					text: 'You must provide certain device, software, and data connection along with GPS connection to use our services, which otherwise do not supply. For as long you use our service, you consent to download and installing updates to our Services, including automatically'
+
+					pos_hint: {'center_x': 0.5, 'center_y': 0.425}
+					font_style : 'Caption'
+					padding: 18,10
+
+				# ------------ Privacy Policy and user Data -------------
+				MDLabel:
+					text: 'OTHER DETAILS'
+					halign: 'center'
+					size_hint_y: None
+					height: 50
+					font_style: "Body1"
+					pos_hint: {'center_x': 0.5, 'center_y': 0.36}
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint: {'center_x': 0.5, 'center_y': 0.345}
+
+				MDLabel:
+					text: 'WeatherAPI cares about your privacy. Promote safety, integrity and security in our motto. Provide measurement and Analytic Data so you can use it as convinencly. We do not work with Third-Party apps since then your information remains with you. We may use your storage in-order to handle data efficiently and speedly. The app is still in developing stages, so you might find difficulties with interface and graphics. You might find bugs with-in app, since then we recommend you to give the feedback on the same. Support us ! \nThank you for keeping faith on us and have a Good Day! \n\nMail us : weatherapi.contact.0102@gmail.com'
+					font_style : 'Caption'
+					padding: 18,10
+					pos_hint: {'center_x': 0.5, 'center_y': 0.225}
+
+				MDSeparator:
+					height: "1dp"
+					size_hint_x: None
+					width: 300
+					pos_hint: {'center_x': 0.5, 'center_y': 0.09}
+
+
+					

@@ -1,0 +1,42 @@
+<LoadScreen>:
+
+	MDBoxLayout:
+		orientation: 'vertical'
+		md_bg_color : 1,1,1,1
+		
+		MDLabel:
+			id: label
+			text:'Loading Data : {}%'.format(pd.value)
+			size_hint_y: None
+			height: '48dp'
+			size_hint_x: None
+			width: 190
+			pos_hint: {'center_x':0.5, 'center_y':0.6}
+
+		MDProgressBar:
+			id: pd
+			size_hint_x: 1
+			size_hint_y: None
+			height: '48dp'
+
+			#pos_hint: {'center_x':0.5, 'center_y':0.5}
+			
+	    	color: app.theme_cls.accent_color
+
+
+	Image:
+		id : bg_image
+		source: 'Resorces\\weather_iconPNG1.png'
+		opacity: 0.5
+		pos_hint: {'center_x': 0.5,'center_y':0.64}
+	
+	MDLabel:
+		id : hint_text
+		text: ''
+		size_hint_y: None
+		height: '48dp'
+		size_hint_x: None
+		width: 190
+		font_style: 'Subtitle2'
+		theme_text_color : 'Hint'
+		pos_hint: {'center_x': 0.54,'center_y':0.4}

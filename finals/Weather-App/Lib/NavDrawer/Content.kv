@@ -1,0 +1,79 @@
+#:import webbrowser webbrowser
+
+<ContentNavDrawer>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		padding: '9dp'
+
+		MDLabel:
+			id: user_name
+			text: "Welcome, User"
+			size_hint_y: None
+			height: self.texture_size[1]
+		MDLabel:
+			id: user_gmail
+			text: 'Complete Profile'
+			font_style: 'Caption'
+			size_hint_y: None
+			height: self.texture_size[1]
+
+		ScrollView:
+			MDList:
+
+				#-------------Home----------------
+				OneLineIconListItem:
+					text: 'Home'
+					on_release:
+						app.root.ids.navigation_drawer.set_state('close')
+						app.root.ids.screen_manager.current = 'main_screen'
+					IconLeftWidget:
+						icon: 'home'
+
+				#-------------Profile----------------
+				OneLineIconListItem:
+					text: 'Profile'
+					on_release:
+						app.root.ids.navigation_drawer.set_state('close')
+						app.root.ids.screen_manager.current = 'profile_screen'
+					IconLeftWidget:
+						icon: 'face-profile'
+
+				#-------------setting----------------
+				OneLineIconListItem:
+					text: 'Settings'
+					on_release:
+						app.root.ids.navigation_drawer.set_state('close')
+						app.root.ids.screen_manager.current = 'setting_screen'
+					IconLeftWidget:
+						icon: 'settings'
+
+				#-------------About----------------
+				OneLineIconListItem:
+					text: 'About Us'
+					on_release:
+						app.root.ids.navigation_drawer.set_state('close')
+						app.root.ids.screen_manager.current = 'about_screen'
+					IconLeftWidget:
+						icon: 'emoticon-happy-outline'
+
+				
+
+
+				#-------------Privacy Policy----------------
+				OneLineIconListItem:
+					text: 'Developer'
+					on_release:
+						app.root.ids.navigation_drawer.set_state('close')
+						app.root.ids.screen_manager.current = 'policy_screen'
+					IconLeftWidget:
+						icon: 'card-text-outline'
+
+				#-------------Feedback----------------
+				TwoLineListItem:
+					text: 'Feedback'
+					secondary_text: 'Weatherapi.contact.0102@gmail.com'
+					on_release:
+						app.root.ids.navigation_drawer.set_state('close')
+						webbrowser.open("") #Gmail Link
+						
+					

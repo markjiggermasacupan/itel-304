@@ -1,0 +1,160 @@
+<BarView>:
+	MDBoxLayout:
+		orientation : 'vertical'
+		size_hint : None, None
+		width : root.width
+		height: root.height
+		md_bg_color : 242/255, 242/255, 242/255 ,1
+
+		MDToolbar:
+			id: go_back_tool_bar
+			title: 'Statistic Data'
+			elevation: 10
+			pos_hint: {"top":1}
+			left_action_items: [['keyboard-backspace', lambda x: root.go_back()]]
+
+		MDLabel:
+			id: bar_city
+			text: ''
+			size_hint_y : None
+			halign : 'center'
+			height: 50
+
+		MDSeparator:
+			height: "1dp"
+			size_hint_x: None
+			width: 300
+			pos_hint : {'center_x': 0.5, 'center_y': 0.5}
+
+		MDBoxLayout:
+			orientation: 'vertical'
+			#md_bg_color : 1,0,1,0.3
+			md_bg_color : 242/255, 242/255, 242/255 ,1
+
+			CustomDropDown:
+				id: custom_dropdown
+				size_hint_y: None
+				height: 50
+		
+			MDBoxLayout:
+
+				orientation: 'vertical'
+
+				ScrollView:
+					MDGridLayout:
+						id: bar_grid_layout
+						
+						cols: 1
+						padding: 10
+						
+						size_hint_y : None
+						height: 900
+						#md_bg_color: 1,0,1,0.7
+						md_bg_color : 242/255, 242/255, 242/255 ,1
+							
+						MDLabel:
+							text: 'Today\'s Projections'
+							halign: 'center'
+							size_hint_y : None
+							height: 50
+
+						MDLabel:
+							text: '< Swipe left and Right respectively >'
+							font_style: 'Caption'
+							size_hint_y : None
+							height: 40
+							
+						MDBoxLayout:
+							id: corousel_view
+							md_bg_color: 1,1,0,0.6
+							size_hint_y: None
+							height: 300
+
+						MDSeparator:
+							height: "3dp"
+							pos_hint : {'center_x': 0.5, 'center_y': 0.5}
+
+						
+						MDLabel:
+							text: 'Tomorrow Projections :'
+							halign: 'center'
+							size_hint_y: None
+							height: 50
+
+						MDLabel:
+							text: '< Swipe left and Right respectively >'
+							font_style: 'Caption'
+							size_hint_y : None
+							height: 40
+
+						MDBoxLayout:
+							id: next_day_view
+							md_bg_color: 1,1,0,0.6
+							size_hint_y_: None
+							height: 300
+
+						MDSeparator:
+							height: "3dp"
+							pos_hint : {'center_x': 0.5, 'center_y': 0.5}
+
+						
+
+						
+
+
+						
+
+
+
+			
+			
+		#----------------------< Navigation bar>-------------------------
+		MDBottomNavigation:
+			md_bg_color : 242/255, 242/255, 242/255 ,1
+			panel_color: 1,1,1, 1
+			size_hint: (0.6,0.5)
+			#size_hint_x: None
+			#width: root.width-100
+			size_hint_y: None
+			height: 50
+			pos_hint: {'top': 0.03}
+
+			MDBottomNavigationItem:
+			    name: 'screen 1'
+			    icon: 'table'
+			    on_tab_release: app.root.ids.screen_manager.current = 'City_View'
+			    md_bg_color : 242/255, 242/255, 242/255 ,1
+
+			MDBottomNavigationItem:
+			    text_color_active: 1, 0, 1, 1
+			    name: 'screen 2'
+			    icon: 'chart-bar'
+			    md_bg_color : 242/255, 242/255, 242/255 ,1
+
+<CustomDropDown>:
+	
+	
+	MDLabel :
+		text: 'Select Options :'
+		height: self.texture_size[1]
+    	font_style: 'Subtitle2'
+    	spacing : "10"
+		
+	MDRaisedButton:
+        id: button
+        text: "Plots"
+        pos_hint: {"center_x": .52, "center_y": .5}
+        size_hint: (0.2, 0.6)
+        on_release: app.dropdown_condition.open(self)
+
+    MDRaisedButton:
+        id: button
+        text: "Dates"
+        pos_hint: {"center_x": .82, "center_y": .5}
+        size_hint: (0.2, 0.6)
+        on_release: app.dropdown_date.open(self)
+	
+
+
+
+		            
